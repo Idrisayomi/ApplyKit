@@ -1,5 +1,5 @@
 /**
- * API Client for ApplyKit Backend
+ * API Client for JobPilot Backend
  * Handles all communication with the backend API routes
  */
 

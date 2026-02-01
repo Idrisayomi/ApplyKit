@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+/* import { GoogleGenerativeAI } from '@google/generative-ai';
 console.log('GEMINI_API_KEY exists:', !!process.env.GEMINI_API_KEY);
 console.log('GEMINI_API_KEY length:', process.env.GEMINI_API_KEY?.length);
 
@@ -62,3 +62,4 @@ export async function generateJSON<T>(prompt: string): Promise<T> {
 }
 
 export default genAI;
+ */

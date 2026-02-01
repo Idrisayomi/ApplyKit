@@ -10,7 +10,7 @@ const openai = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
   defaultHeaders: {
     "HTTP-Referer": "http://localhost:3000", // required by OpenRouter
-    "X-Title": "ApplyKit", // your app name
+    "X-Title": "JobPilot", // your app name
   },
 });
 

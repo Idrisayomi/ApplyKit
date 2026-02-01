@@ -113,7 +113,7 @@ export default function Home() {
                 </svg>
               </div>
               <span className="font-bold text-xl tracking-tight text-white hidden sm:block">
-                ApplyKit
+                JobPilot
               </span>
             </div>
           </div>
