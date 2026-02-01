@@ -124,7 +124,7 @@ const UploadCVView: React.FC<UploadCVViewProps> = ({ onNext, updateData, current
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const canContinue = currentData.cvFile !== null || currentData.cvLink.length > 5;
+  const canContinue = currentData.cvFile !== null;
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center py-12 md:py-0 min-h-full">
@@ -193,14 +193,23 @@ const UploadCVView: React.FC<UploadCVViewProps> = ({ onNext, updateData, current
           <div className="h-px bg-slate-800 flex-1" />
         </div>
 
-        <Input
-          icon={<LinkIcon className="w-5 h-5" />}
-          placeholder="https://linkedin.com/in/..."
-          value={currentData.cvLink}
-          onChange={(e) => updateData({ cvLink: e.target.value })}
-          label="CV / LinkedIn URL"
-          className="bg-slate-900/50 backdrop-blur-sm"
-        />
+        {/* LinkedIn URL Input - DISABLED with Coming Soon badge */}
+        <div className="relative">
+          <div className="absolute -top-2 right-2 z-10">
+            <span className="inline-flex items-center px-2 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+              Coming Soon
+            </span>
+          </div>
+          <Input
+            icon={<LinkIcon className="w-5 h-5" />}
+            placeholder="https://linkedin.com/in/..."
+            value=""
+            onChange={() => {}}
+            label="CV / LinkedIn URL"
+            className="bg-slate-900/30 backdrop-blur-sm cursor-not-allowed opacity-60"
+            disabled
+          />
+        </div>
 
         <div className="pt-4">
           <Button fullWidth size="lg" onClick={onNext} disabled={!canContinue}>
