@@ -35,7 +35,7 @@ export function parseLinkedInURL(url: string): LinkedInProfile {
   
   return {
     url,
-    username,
+    username: username ?? undefined,  // ✅ Convert null to undefined
     isValid,
   };
 }
