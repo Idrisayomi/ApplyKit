@@ -7,7 +7,7 @@ Backend API routes for CV analysis, job matching, and application generation usi
 
 ### 1. Install Dependencies
 ```bash
-npm install pdf-parse @google/generative-ai
+npm install unpdf Openai
 ```
 
 ### 2. Environment Variables
@@ -16,7 +16,7 @@ Create a `.env.local` file in your project root:
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-Get your Gemini API key from: https://aistudio.google.com/app/apikey
+Get your Openai API key from: https://Openrouter.ai
 
 ### 3. Folder Structure
 ```
@@ -27,9 +27,11 @@ app/
 │   ├── search-jobs/route.ts        # Find matching jobs
 │   └── generate-applications/route.ts  # Generate tailored materials
 lib/
-├── gemini.ts                       # Gemini API client
+├── openai.ts                       # openai API client
 ├── pdf-parser.ts                   # PDF text extraction
 └── linkedin-scrapper.ts            # LinkedIn URL handling
+├── api-client.ts                   
+├── 
 ```
 
 ## API Endpoints
@@ -180,13 +182,10 @@ Common HTTP status codes:
 2. **LinkedIn URLs**: Currently stores URLs for reference. Direct scraping requires LinkedIn API access or third-party services
 3. **Rate Limiting**: Consider implementing rate limiting for production
 4. **File Storage**: CV files are processed in-memory. For production, consider cloud storage (AWS S3, etc.)
-5. **Gemini Models**: 
-   - `gemini-1.5-flash` - Fast, cost-effective
-   - `gemini-1.5-pro` - Higher quality, more expensive
 
 ## Next Steps
 
-1. Add your Gemini API key to `.env.local`
+1. Add your openai API key to `.env.local`
 2. Test each endpoint with Postman or similar tool
 3. Integrate the API calls into your frontend components
 4. Add error handling and loading states
